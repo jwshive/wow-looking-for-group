@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ALLAUTH
-SITE_ID = 3
+SITE_ID = 4
 redirect_uri = '/'
 LOGIN_REDIRECT_URL = redirect_uri
 
