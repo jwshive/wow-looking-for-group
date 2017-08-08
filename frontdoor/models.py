@@ -50,8 +50,8 @@ class ProcessedToons(models.Model):
     character_progression = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
-    #def __str__(self):
-    #    return ("%s => %s => %s => %s => %s => %s" % (character_name, character_race, character_faction, character_server, character_class, character_spec))
+    def __str__(self):
+        return ("%s => %s => %s => %s => %s => %s" % (self.character_name, self.character_race, self.character_faction, self.character_server, self.character_class, self.character_spec))
 
     class Meta:
         managed = True
