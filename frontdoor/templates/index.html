@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<title>Home</title>
+	</head>
+
+	<body>
+		<form method="post" action="/group/">
+			{% csrf_token %}
+			<p><textarea name="JSON"></textarea></p>
+			<p><input type="submit" name="submit"></p>
+		</form>
+	</body>
+</html>
