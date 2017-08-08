@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import RequestedParses
+from .models import RequestedParses, ProcessedToons
 import json
 from base64 import b64encode, b64decode
 import sys
@@ -38,10 +38,29 @@ def parse_group(request):
         toon_spec = results['spec']
         toon_legendaries = results['legendaries']
         toon_realm = results['server']
+        toon_level = results['level']
+        toon_progression = results['all_progression']
+        toon_thumbnail = results['thumbnail']
+
+        # ADD Toon To DB
+        ProcessedToons.objects.create(
+                character_name=toon_name,
+                character_race=toon_race,
+                character_faction=toon_faction,
+                character_server=toon_realm,
+                character_class=toon_class,
+                character_spec=toon_spec,
+                character_level=toon_level,
+                character_thumbnail=toon_thumbnail,
+                character_equipped_ilevel=toon_ilevel,
+                character_legendaries=toon_legendaries,
+                character_progression=toon_progression)
         
         toon_stash = "(%s,%s,%s,%s,%s,%s,%s,%s)" % (toon_class, toon_faction, toon_ilevel, toon_name, toon_race, toon_spec, toon_legendaries, toon_realm)
         toon_info.append(toon_stash)
-        # Send the info back
+
+
+    # Send the info back
     return render(request, 'result.html', {'toon_info': toon_info})
 
 
