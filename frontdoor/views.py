@@ -23,7 +23,8 @@ def parse_group(request):
     if user_id:
         try:
             banned = BanHammer.objects.filter(character_name=user_id.id).first()
-            return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
+            if banned:
+                return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
         except ObjectDoesNotExist:
             pass
 
