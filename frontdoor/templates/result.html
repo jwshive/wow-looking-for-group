@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+	Your results
+{% endblock %}
+
 {% block content %}
 
 	{% for character in toon_info %}
@@ -10,7 +14,7 @@
 		Realm: {{ character.toon_realm }}<br>
 		Spec: {{ character.toon_spec }}<br>
 		Item Level: {{ character.toon_ilevel }}<br>
-		Legendaries: {{ character.toon_legendaries }}<br>
+		Legendaries: {{ character.toon_legendaries|safe }}<br>
 		{% for raid in character.toon_progression %}
 		<strong>{{ raid.raid_name }}</strong> <br>Normal: {{ raid.Normal }}<br>Heroic: {{ raid.Heroic }}<br>Mythic: {{ raid.Mythic }}<br>
 		{% endfor %}
