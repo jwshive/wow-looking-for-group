@@ -181,7 +181,7 @@ class BlizzardAPI:
                 'class': CLASSES[character_class],
                 'level': character_level,
                 'equipped_ilevel': equipped_ilevel,
-                'legendaries': '\n'.join(legendary_items) if legendary_items else "No Legendary Items.",
+                'legendaries': '<br>'.join(legendary_items) if legendary_items else "No Legendary Items.",
                 'thumbnail': thumbnail,
                 'spec': spec,
                 'all_progression': all_progression,
