@@ -4,7 +4,6 @@ import json
 from base64 import b64encode, b64decode
 import sys
 from frontdoor.api_functions import BlizzardAPI
-from ast import literal_eval
 
 # Create your views here.
 def index(request):
@@ -60,7 +59,7 @@ def parse_group(request):
                 )
         
         toon_stash = "(%s,%s,%s,%s,%s,%s,%s,%s)" % (toon_class, toon_faction, toon_ilevel, toon_name, toon_race, toon_spec, toon_legendaries, toon_realm)
-        tuple_stash = literal_eval(toon_stash)
+        tuple_stash = eval(toon_stash)
         print(type(tuple_stash))
         toon_info.append(tuple_stash)
 
