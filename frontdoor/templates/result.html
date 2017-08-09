@@ -11,37 +11,18 @@
 		<legend><img src="{{character.api_image_url_base}}{{ character.toon_thumbnail }}"></img>{{ character.toon_name }}</legend>
 		<table>
 			<tr>
-				<th align="right">Class</th>
-				<td align="left">{{ character.toon_class }}</td>
+				<th align="right">Class</th><td align="left">{{ character.toon_class }}</td> <th align="right">Race</th><td align="left">{{ character.toon_race }}</td>
 			</tr>
 			<tr>
-				<th align="right">Race</th>
-				<td align="left">{{ character.toon_race }}</td>
+				<th align="right">Realm</th> <td align="left">{{ character.toon_realm }}</td> <th align="right">Spec</th> <td align="left">{{ character.toon_spec }}</td>
 			</tr>
 			<tr>
-				<th align="right">Realm</th>
-				<td align="left">{{ character.toon_realm }}</td>
-			</tr>
-			<tr>
-				<th align="right">Spec</th>
-				<td align="left">{{ character.toon_spec }}</td>
-			</tr>
-			<tr>
-				<th align="right">Item Level</th>
-				<td align="left">{{ character.toon_ilevel }}</td>
-			</tr>
-			<tr>
-				<th align="right">Legendaries</th>
-				<td align="left">{{ character.toon_legendaries|safe }}</td>
+				<th align="right">Item Level</th> <td align="left">{{ character.toon_ilevel }}</td> <th align="right">Legendaries</th><td align="left">{{ character.toon_legendaries|safe }}</td>
 			</tr>
 			{% for raid in character.toon_progression %}
 			<tr>
 				<th>{{ raid.raid_name }}</th>
-				<td>
-				LFR: {{ raid.LFR }}<br>
-				Normal: {{ raid.Normal }}<br>
-				Heroic: {{ raid.Heroic }}<br>
-				Mythic: {{ raid.Mythic }}</td>
+				<td>LFR: [{{ raid.LFR }}] Normal: [{{ raid.Normal }}] Heroic: [{{ raid.Heroic }}] Mythic: [{{ raid.Mythic }}]</td>
 			</tr>
 			{% endfor %}
 		</table>
