@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='processedtoons',
             name='group_lookup_trackback',
-            field=models.ForeignKey(default='NULL', on_delete=django.db.models.deletion.CASCADE, to='frontdoor.RequestedParses'),
+            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, to='frontdoor.RequestedParses'),
             preserve_default=False,
         ),
     ]
