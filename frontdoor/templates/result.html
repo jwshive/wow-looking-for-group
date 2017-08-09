@@ -8,7 +8,7 @@
 
 	{% for character in toon_info %}
 	<fieldset>
-		<legend><img src="{{character.api_image_url_base}}{{ character.toon_thumbnail }}"></img>{{ character.toon_name }}</legend>
+		<legend><img src="{{character.api_image_url_base}}{{ character.toon_thumbnail }}"></img><a href="{{ character.api_armory_base_link }}{{character.toom_realm}}/{{character.toon_name}}">{{ character.toon_name }}</a></legend>
 		<table class="table-style-one" style="display:inline-block">
 			<tr>
 				<th align="right">Class</th><td align="left">{{ character.toon_class }}</td>
