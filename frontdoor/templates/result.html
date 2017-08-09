@@ -1,5 +1,12 @@
-{{ toon_info }}
+{% extends 'base.html' %}
 
-{% for character in toon_info %}
-	<p>{{ character }}</p>
-{% endfor %}
+{% block content %}
+
+	{{ toon_info }}
+	{{ toon_info|length }}
+
+	{% for character in toon_info %}
+		<p>{{ character }}</p>
+	{% endfor %}
+
+{% block content %}
