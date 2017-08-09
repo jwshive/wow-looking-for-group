@@ -62,11 +62,14 @@ ITEMS_OF_VALUE = [
 ]
 
 RAID_IDS = [
+        8026,
+        8440,
         8025,
         8524,
         ]
 
 RAID_LEVELS = [
+        'lfr',
         'normal',
         'heroic',
         'mythic',
@@ -129,6 +132,7 @@ class BlizzardAPI:
         for raid in range(num_raids):
             for tracked_raid_id in RAID_IDS:
                 if stat_data['progression']['raids'][raid]['id'] == tracked_raid_id:
+                    bosses_dead_lfr = []
                     bosses_dead_normal = []
                     bosses_dead_heroic = []
                     bosses_dead_mythic = []
@@ -136,6 +140,8 @@ class BlizzardAPI:
                     raid_name = stat_data['progression']['raids'][raid]['name']
                     num_bosses = len(stat_data['progression']['raids'][raid]['bosses'])
                     for boss_kills in range(num_bosses):
+                        if stat_data['progression']['raids'][raid]['bosses'][boss_kills]['lfrKills'] != 0:
+                            bosses_dead_lfr.append(stat_data['progression']['raids'][raid]['bosses'][boss_kills]['name'])
                         if stat_data['progression']['raids'][raid]['bosses'][boss_kills]['normalKills'] != 0:
                             bosses_dead_normal.append(stat_data['progression']['raids'][raid]['bosses'][boss_kills]['name'])
                         if stat_data['progression']['raids'][raid]['bosses'][boss_kills]['heroicKills'] != 0:
@@ -146,11 +152,12 @@ class BlizzardAPI:
 
 
 
+                    lfr_kills = str(len(bosses_dead_lfr)) + " / " + str(num_bosses)
                     normal_kills = str(len(bosses_dead_normal)) + " / " + str(num_bosses)
                     heroic_kills = str(len(bosses_dead_heroic)) + " / " + str(num_bosses)
                     mythic_kills = str(len(bosses_dead_mythic)) + " / " + str(num_bosses)
     
-                    progression_entry = {"raid_name": raid_name, "Normal": normal_kills, "Heroic": heroic_kills, "Mythic": mythic_kills}
+                    progression_entry = {"raid_name": raid_name, "Normal": normal_kills, "Heroic": heroic_kills, "Mythic": mythic_kills, "LFR": lfr_kills}
                     all_progression.append(progression_entry)
 
         # END

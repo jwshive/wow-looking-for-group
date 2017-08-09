@@ -37,8 +37,10 @@
 			{% for raid in character.toon_progression %}
 			<tr>
 				<th>{{ raid.raid_name }}</th>
-				<td>Normal: {{ raid.Normal }}<br>
-					Heroic: {{ raid.Heroic }}<br>
+				<td>
+				LFR: {{ raid.LFR }}<br>
+				Normal: {{ raid.Normal }}<br>
+				Heroic: {{ raid.Heroic }}<br>
 				Mythic: {{ raid.Mythic }}</td>
 			</tr>
 			{% endfor %}
