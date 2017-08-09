@@ -9,7 +9,7 @@
 	{% for character in toon_info %}
 	<fieldset>
 		<legend>{{ character.toon_name }}</legend>
-		Name: {{ character.toon_class }}<br>
+		Class: {{ character.toon_class }}<br>
 		Race: {{ character.toon_race }}<br>
 		Realm: {{ character.toon_realm }}<br>
 		Spec: {{ character.toon_spec }}<br>
@@ -19,6 +19,7 @@
 		<strong>{{ raid.raid_name }}</strong> <br>Normal: {{ raid.Normal }}<br>Heroic: {{ raid.Heroic }}<br>Mythic: {{ raid.Mythic }}<br>
 		{% endfor %}
 	</fieldset>
+	<br>
 	{% endfor %}
 
 	
