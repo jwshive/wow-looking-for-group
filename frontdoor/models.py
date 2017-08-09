@@ -64,7 +64,7 @@ class BanHammer(models.Model):
     character_name = models.ForeignKey(RequestedParses)
 
     def __str__(self):
-        return "%s" % self.character_name.requesting_member
+        return "%s - %s" % (self.character_name.requesting_member, self.character_name.requesting_member_realm)
 
     class Meta:
         managed = True
