@@ -27,11 +27,13 @@ def parse_group(request):
     # Find a way to cache that for an hour so that we're not making 1000 api calls for the same data.import sysrom api_functions import BlizzardAPI
     
     api_call = BlizzardAPI()
+    site_settings = SiteSettings.objects.get()
+
     
     toon_info = []
     
     for item in json_data['request']['group']['members']:
-        results = api_call.get_character_stats(item['name'], item['realm'].replace(' ','-'))
+        results = api_call.get_character_stats(item['name'], item['realm'].replace(' ','-'), site_settings.blizzard_api_url_base, site_settings.client_id)
         toon_class = results['class']
         toon_faction = results['faction']
         toon_ilevel = results['equipped_ilevel']
@@ -60,7 +62,7 @@ def parse_group(request):
                 group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
                 )
         toon_stash = {}
-        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression, 'toon_thumbnail': toon_thumbnail}
+        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression, 'toon_thumbnail': toon_thumbnail, 'api_image_url_base': site_settings.blizzard_api_image_url_base}
         toon_info.append(toon_stash)
 
 
