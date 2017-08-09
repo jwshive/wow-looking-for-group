@@ -19,9 +19,9 @@ print(base64_string)
 
 
 # DECODING BASE64
-json_data = json.loads(b64decode(base64_string).decode(ENCODING).replace('\'', '"'))
+#json_data = json.loads(b64decode(base64_string).decode(ENCODING).replace('\'', '"'))
 
-requesting_member_name = json_data['request']['requesting-member-name']
-requesting_member_realm = json_data['request']['requesting-member-realm'] 
-
-print(json_data)
+#requesting_member_name = json_data['request']['requesting-member-name']
+#requesting_member_realm = json_data['request']['requesting-member-realm'] 
+#
+#print(json_data)
