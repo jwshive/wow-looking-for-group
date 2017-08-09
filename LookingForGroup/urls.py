@@ -21,7 +21,7 @@ from frontdoor.views import index, parse_group, show_parses
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 #    url(r'^accounts/', include('allauth.urls')),
-    url(r'^group/', parse_group),
+    url(r'^results/', parse_group),
     url(r'^show/', show_parses),
     url(r'^$', index),
 ]

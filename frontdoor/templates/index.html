@@ -2,7 +2,7 @@
 
 {% block content %}
 <h3>Enter the group string from the addon:</h3>
-<form method="post" action="/group/">
+<form method="post" action="/results/">
 	{% csrf_token %}
 	<p><textarea rows="10" cols="50" name="JSON"></textarea></p>
 	<p><input type="submit" name="submit" class="btn btn-primary"></p>
