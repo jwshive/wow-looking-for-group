@@ -8,6 +8,7 @@
 	{% for character in toon_info %}
 		<p>{{ character }}</p>
 		<p>{{ character|length }}</p>
+		<p>{{ character.split(',')[0] }}</p>
 	{% endfor %}
 	
 	{% for character in toon_info_list %}
