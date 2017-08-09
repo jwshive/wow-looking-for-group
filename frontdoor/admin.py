@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import RequestedParses, SiteSettings, ProcessedToons
+from .models import RequestedParses, SiteSettings, ProcessedToons, BanHammer
 
 # Register your models here.
 class RequestedParsesAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ class ProcessedToonsAdmin(admin.ModelAdmin):
 admin.site.register(RequestedParses, RequestedParsesAdmin)
 admin.site.register(SiteSettings)
 admin.site.register(ProcessedToons, ProcessedToonsAdmin)
+admin.site.register(BanHammer)
