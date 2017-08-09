@@ -54,7 +54,9 @@ def parse_group(request):
                 character_thumbnail=toon_thumbnail,
                 character_equipped_ilevel=toon_ilevel,
                 character_legendaries=toon_legendaries,
-                character_progression=toon_progression)
+                character_progression=toon_progression,
+                group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
+                )
         
         toon_stash = "(%s,%s,%s,%s,%s,%s,%s,%s)" % (toon_class, toon_faction, toon_ilevel, toon_name, toon_race, toon_spec, toon_legendaries, toon_realm)
         toon_info.append(toon_stash)
