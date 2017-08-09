@@ -9,7 +9,7 @@
 	{% for character in toon_info %}
 	<fieldset>
 		<legend><img src="{{character.api_image_url_base}}{{ character.toon_thumbnail }}"></img>{{ character.toon_name }}</legend>
-		<table>
+		<tablei class="table-style-one" style="display:inline-block">
 			<tr>
 				<th align="right">Class</th><td align="left">{{ character.toon_class }}</td> <th align="right">Race</th><td align="left">{{ character.toon_race }}</td>
 			</tr>
