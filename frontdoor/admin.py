@@ -12,7 +12,7 @@ class ProcessedToonsAdmin(admin.ModelAdmin):
 class BanHammerAdmin(admin.ModelAdmin):
     list_display = ('character_name',)
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         qs = super(BanHammerAdmin, self).queryset(request)
         qs = RequestedParses.objects.filter().distinct('requesting_member', 'requesting_member_realm')
         return qs
