@@ -59,3 +59,80 @@ class ProcessedToons(models.Model):
         db_table = 'processed_toons'
         verbose_name_plural = 'Processed Characters'
 
+
+class Classes(models.Model):
+    class_id = models.IntegerField(primary_key=True)
+    class_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.class_name
+
+    class Meta:
+        managed = True
+        db_table = 'wow_classes'
+        verbose_name_plural = 'WoW Classes'
+
+
+class Races(models.Model):
+    race_id = models.IntegerField(primary_key=True)
+    race_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return "[%s] %s" % (self.race_id, self.race_name)
+
+    class Meta:
+        managed = True
+        db_table = 'wow_races'
+        verbose_name_plural = 'WoW Races'
+
+
+class Faction(models.Model):
+    faction_id = models.IntegerField(primary_key=True)
+    faction_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.faction_name
+
+    class Meta:
+        managed = True
+        db_table = 'wow_factions'
+        verbose_name_plural = 'WoW Factions'
+
+
+class ItemsOfValue(models.Model):
+    item_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.item_name
+
+    class Meta:
+        managed = True
+        db_table = 'wow_items_of_value'
+        verbose_name_plural = 'WoW Items Of Value'
+
+
+class RaidIDs(models.Model):
+    raid_id = models.IntegerField(primary_key=True)
+
+    def __str__(self):
+        return self.raid_id
+
+    class Meta:
+        managed = True
+        db_table = 'wow_raid_ids'
+        verbose_name_plural = 'WoW Watched Raid IDs'
+
+
+class RaidLevels(models.Model):
+    raid_level = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.raid_level
+
+    class Meta:
+        managed = True
+        db_table = 'wow_raid_levels'
+        verbose_name_plural = 'WoW Raid Difficulties'
+
+
+    
