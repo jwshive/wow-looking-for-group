@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.battlenet',
+#    'allauth',
+#    'allauth.account',
+#    'allauth.socialaccount',
+#    'allauth.socialaccount.providers.battlenet',
     'frontdoor',
 ]
 
@@ -141,18 +141,18 @@ LOGIN_REDIRECT_URL = redirect_uri
 
 AUTHENTICATION_BACKENDS = (
             'django.contrib.auth.backends.ModelBackend',
-            'allauth.account.auth_backends.AuthenticationBackend',
+#            'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 
-SOCIALACCOUNT_PROVIDERS = {
-        'battlenet': {
-            'SCOPE': [
-                'wow.profile',
-                ],
-            },
-        }
+#SOCIALACCOUNT_PROVIDERS = {
+#        'battlenet': {
+#            'SCOPE': [
+#                'wow.profile',
+#                ],
+#            },
+#        }
 
-ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_EMAIL_REQUIRED = True
 
-ACCOUNT_USERNAME_VALIDATORS = 'players.validators.validators_list'
+#ACCOUNT_USERNAME_VALIDATORS = 'players.validators.validators_list'
