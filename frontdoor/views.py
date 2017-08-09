@@ -17,20 +17,6 @@ def parse_group(request):
     json_data = json.loads(b64decode(request.POST['JSON']).decode(ENCODING).replace('\'', '"'))
 
 
-    # Check if user is banned
-    user_id = RequestedParses.objects.filter(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm']).first()
-    print(user_id)
-    # Make unique the BanHammer table so I don't need .first on that
-    if user_id:
-        try:
-            banned = BanHammer.objects.filter(character_name=user_id).first()
-            if banned:
-                return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
-        except ObjectDoesNotExist:
-            pass
-
-
-
     # Store group string in db
     new_data = RequestedParses.objects.create(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm'], group_string=request.POST['JSON'], json_string=json_data)
 

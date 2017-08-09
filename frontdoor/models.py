@@ -59,14 +59,3 @@ class ProcessedToons(models.Model):
         db_table = 'processed_toons'
         verbose_name_plural = 'Processed Characters'
 
-
-class BanHammer(models.Model):
-    character_name = models.ForeignKey(RequestedParses)
-
-    def __str__(self):
-        return "%s - %s" % (self.character_name.requesting_member, self.character_name.requesting_member_realm)
-
-    class Meta:
-        managed = True
-        db_table = 'banned_users'
-        verbose_name_plural = 'Banned Users'

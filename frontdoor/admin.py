@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import RequestedParses, SiteSettings, ProcessedToons, BanHammer
+from .models import RequestedParses, SiteSettings, ProcessedToons
 
 # Register your models here.
 class RequestedParsesAdmin(admin.ModelAdmin):
@@ -8,10 +8,6 @@ class RequestedParsesAdmin(admin.ModelAdmin):
 class ProcessedToonsAdmin(admin.ModelAdmin):
     list_display = ('character_name', 'character_race', 'character_faction', 'character_server', 'character_class', 'character_spec', 'character_level', 'character_equipped_ilevel')
 
-class BanHammerAdmin(admin.ModelAdmin):
-    list_display = ('character_name',)
-
 admin.site.register(RequestedParses, RequestedParsesAdmin)
 admin.site.register(SiteSettings)
 admin.site.register(ProcessedToons, ProcessedToonsAdmin)
-admin.site.register(BanHammer, BanHammerAdmin)
