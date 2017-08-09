@@ -80,7 +80,7 @@ class BlizzardAPI:
     def __init__(self):
         pass
 
-    def get_character_stats(self, character_name, server_name, blizzard_api_url_base, client_id debug=False):
+    def get_character_stats(self, character_name, server_name, blizzard_api_url_base, client_id, debug=False):
 
         character_string = "/character/" + server_name.lower() + "/" + character_name.lower()
         character_fields = "?fields=items,talents,progression&local=en_US"
