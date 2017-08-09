@@ -18,7 +18,7 @@ def parse_group(request):
 
     # Check if user is banned
     user_id = RequestedParses.objects.get(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm'])
-    banned = BanHammer.objects.get(pk=user_id.id)
+    banned = BanHammer.objects.get(character_name=user_id.id)
     if banned:
         return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
 
