@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
 from .models import RequestedParses, ProcessedToons, BanHammer
 import json
 from base64 import b64encode, b64decode
@@ -21,7 +22,7 @@ def parse_group(request):
         user_id = RequestedParses.objects.get(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm'])
         banned = BanHammer.objects.get(character_name=user_id.id)
         return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
-    except DoesNotExist:
+    except ObjectDoesNotExist:
         pass
 
 
