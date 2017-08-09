@@ -58,7 +58,7 @@ def parse_group(request):
                 group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
                 )
         toon_stash = {}
-        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': character_progression}
+        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression}
         toon_info.append(toon_stash)
 
 
