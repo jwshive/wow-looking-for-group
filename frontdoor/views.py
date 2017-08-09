@@ -19,8 +19,9 @@ def parse_group(request):
 
     # Check if user is banned
     try:
-        user_id = RequestedParses.objects.get(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm'])
-        banned = BanHammer.objects.get(character_name=user_id.id)
+        user_id = RequestedParses.objects.get(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm']).first()
+        # Make unique the BanHammer table so I don't need .first on that
+        banned = BanHammer.objects.get(character_name=user_id.id).first()
         return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
     except ObjectDoesNotExist:
         pass
