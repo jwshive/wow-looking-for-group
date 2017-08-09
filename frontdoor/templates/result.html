@@ -9,15 +9,40 @@
 	{% for character in toon_info %}
 	<fieldset>
 		<legend>{{ character.toon_name }}</legend>
-		Class: {{ character.toon_class }}<br>
-		Race: {{ character.toon_race }}<br>
-		Realm: {{ character.toon_realm }}<br>
-		Spec: {{ character.toon_spec }}<br>
-		Item Level: {{ character.toon_ilevel }}<br>
-		Legendaries: {{ character.toon_legendaries|safe }}<br>
-		{% for raid in character.toon_progression %}
-		<strong>{{ raid.raid_name }}</strong> <br>Normal: {{ raid.Normal }}<br>Heroic: {{ raid.Heroic }}<br>Mythic: {{ raid.Mythic }}<br>
-		{% endfor %}
+		<table>
+			<tr>
+				<th align="right">Class</th>
+				<td align="left">{{ character.toon_class }}</td>
+			</tr>
+			<tr>
+				<th align="right">Race</th>
+				<td align="left">{{ character.toon_race }}</td>
+			</tr>
+			<tr>
+				<th align="right">Realm</th>
+				<td align="left">{{ character.toon_realm }}</td>
+			</tr>
+			<tr>
+				<th align="right">Spec</th>
+				<td align="left">{{ character.toon_spec }}</td>
+			</tr>
+			<tr>
+				<th align="right">Item Level</th>
+				<td align="left">{{ character.toon_ilevel }}</td>
+			</tr>
+			<tr>
+				<th align="right">Legendaries</th>
+				<td align="left">{{ character.toon_legendaries|safe }}</td>
+			</tr>
+			{% for raid in character.toon_progression %}
+			<tr>
+				<th>{{ raid.raid_name }}</th>
+				<td>Normal: {{ raid.Normal }}</td>
+				<td>Heroic: {{ raid.Heroic }}</td>
+				<td>Mythic: {{ raid.Mythic }}</td>
+			</tr>
+			{% endfor %}
+		</table>
 	</fieldset>
 	<br>
 	{% endfor %}
