@@ -78,14 +78,9 @@ RAID_LEVELS = [
 
 class BlizzardAPI:
     def __init__(self):
-        client_id = 'bvzccjmbfrjbrdb85u2fvgqtcu6bcmrk'
-        client_secret = '5KvkgqMXcGnPAZCdegKrn7fBvPkjRETW'
-        blizzard_api_url_base = 'https://us.api.battle.net/wow'
+        pass
 
-    def get_character_stats(self, character_name, server_name, debug=False):
-        client_id = 'bvzccjmbfrjbrdb85u2fvgqtcu6bcmrk'
-        client_secret = '5KvkgqMXcGnPAZCdegKrn7fBvPkjRETW'
-        blizzard_api_url_base = 'https://us.api.battle.net/wow'
+    def get_character_stats(self, character_name, server_name, blizzard_api_url_base, client_id debug=False):
 
         character_string = "/character/" + server_name.lower() + "/" + character_name.lower()
         character_fields = "?fields=items,talents,progression&local=en_US"

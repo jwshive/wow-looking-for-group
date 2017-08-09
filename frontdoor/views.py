@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
-from .models import RequestedParses, ProcessedToons, BanHammer
+from .models import RequestedParses, ProcessedToons, SiteSettings
 import json
 from base64 import b64encode, b64decode
 import sys
