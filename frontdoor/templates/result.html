@@ -5,13 +5,11 @@
 	{{ toon_info }}
 
 	{% for character in toon_info %}
-		<p>{{ character['toon_name'] }}</p>
-		<p>{{ character['toon_class'] }}</p>
-		<p>{{ character['toon_race'] }}</p>
-		<p>{{ character['toon_realm'] }}</p>
-		<p>{{ character['toon_spec'] }}</p>
-		<p>{{ character['toon_ilevel'] }}</p>
-		<p>{{ character['toon_legendaries'] }}</p>
+		<p> {{ character }}</p>
+	{% endfor %}
+
+	{% for character in toon_info %}
+		<p>{{ character[0] }}</p>
 	{% endfor %}
 	
 {% endblock %}
