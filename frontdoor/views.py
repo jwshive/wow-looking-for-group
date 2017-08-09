@@ -14,7 +14,7 @@ def parse_group(request):
     ENCODING = 'utf-8'
 
     # Convert to JSON
-    json_data = json.dumps(b64decode(request.POST['JSON']).decode(ENCODING).replace('\'', ''))
+    json_data = json.loads(b64decode(request.POST['JSON']).decode(ENCODING).replace('\'', '"'))
 
 
     # Store group string in db
