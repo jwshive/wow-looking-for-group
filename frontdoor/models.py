@@ -115,7 +115,7 @@ class RaidIDs(models.Model):
     raid_id = models.IntegerField(primary_key=True)
 
     def __str__(self):
-        return self.raid_id
+        return str(self.raid_id)
 
     class Meta:
         managed = True
