@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import RequestedParses, ProcessedToons
+from .models import RequestedParses, ProcessedToons, BanHammer
 import json
 from base64 import b64encode, b64decode
 import sys
@@ -14,6 +14,15 @@ def parse_group(request):
 
     # Convert to JSON
     json_data = json.loads(b64decode(request.POST['JSON']).decode(ENCODING).replace('\'', '"'))
+
+
+    # Check if user is banned
+    user_id = RequestedParses.objects.get(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm'])
+    banned = BanHammer.objects.get(pk=user_id.id)
+    if banned:
+        return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
+
+
 
     # Store group string in db
     new_data = RequestedParses.objects.create(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm'], group_string=request.POST['JSON'], json_string=json_data)
