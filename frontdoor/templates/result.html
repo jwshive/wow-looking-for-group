@@ -8,7 +8,7 @@
 
 	{% for character in toon_info %}
 	<fieldset>
-		<legend>{{ character.toon_name }}</legend>
+		<legend><img src="https://render-us.worldofwarcraft.com/character/{{ character.toon_thumbnail }}"></img>{{ character.toon_name }}</legend>
 		<table>
 			<tr>
 				<th align="right">Class</th>
