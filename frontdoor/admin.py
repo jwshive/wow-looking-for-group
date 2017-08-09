@@ -13,7 +13,7 @@ class BanHammerAdmin(admin.ModelAdmin):
     list_display = ('character_name',)
 
     def get_queryset(self, request):
-        qs = super(BanHammerAdmin, self).queryset(request)
+        qs = super(BanHammerAdmin, self).get_queryset(request)
         qs = RequestedParses.objects.filter().distinct('requesting_member', 'requesting_member_realm')
         return qs
 
