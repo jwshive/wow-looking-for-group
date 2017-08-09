@@ -10,7 +10,7 @@ class ProcessedToonsAdmin(admin.ModelAdmin):
 
 
 class BanHammerAdmin(admin.ModelAdmin):
-    list_display = ('character_name')
+    list_display = ('character_name',)
 
     def queryset(self, request):
         qs = super(BanHammerAdmin, self).queryset(request)
