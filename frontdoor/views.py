@@ -59,6 +59,7 @@ def parse_group(request):
                 )
         
         toon_stash = ("%s,%s,%s,%s,%s,%s,%s,%s") % (toon_class, toon_faction, toon_ilevel, toon_name, toon_race, toon_spec, toon_legendaries, toon_realm)
+        print(type(toon_stash))
         toon_info.append(toon_stash)
 
 
