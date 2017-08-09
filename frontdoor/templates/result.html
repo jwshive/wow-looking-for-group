@@ -3,11 +3,15 @@
 {% block content %}
 
 	{{ toon_info }}
-	{{ toon_info|length }}
 
 	{% for character in toon_info %}
-		<p>{{ character }}</p>
-		<p>{{ character|length }}</p>
+		<p>{{ character['toon_name'] }}</p>
+		<p>{{ character['toon_class'] }}</p>
+		<p>{{ character['toon_race'] }}</p>
+		<p>{{ character['toon_realm'] }}</p>
+		<p>{{ character['toon_spec'] }}</p>
+		<p>{{ character['toon_ilevel'] }}</p>
+		<p>{{ character['toon_legendaries'] }}</p>
 	{% endfor %}
 	
 {% endblock %}
