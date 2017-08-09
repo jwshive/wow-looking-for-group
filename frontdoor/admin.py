@@ -14,7 +14,7 @@ class BanHammerAdmin(admin.ModelAdmin):
 
     def queryset(self, request):
         qs = super(BanHammerAdmin, self).queryset(request)
-        qs = qs.order_by('character_name__character_name').distinct('character_name__character_name')
+        qs = qs.order_by('character_name.character_name').distinct('character_name.echaracter_name')
         return qs
 
 admin.site.register(RequestedParses, RequestedParsesAdmin)
