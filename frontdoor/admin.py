@@ -9,7 +9,15 @@ class ProcessedToonsAdmin(admin.ModelAdmin):
     list_display = ('character_name', 'character_race', 'character_faction', 'character_server', 'character_class', 'character_spec', 'character_level', 'character_equipped_ilevel')
 
 
+class BanHammerAdmin(admin.ModelAdmin):
+    list_display = ('character_name')
+
+    def queryset(self, request):
+        qs = super(BanHammerAdmin, self).queryset(request)
+        qs = qs.order_by('character_name').distinct('character_name')
+        return qs
+
 admin.site.register(RequestedParses, RequestedParsesAdmin)
 admin.site.register(SiteSettings)
 admin.site.register(ProcessedToons, ProcessedToonsAdmin)
-admin.site.register(BanHammer)
+admin.site.register(BanHammer, BanHammerAdmin)
