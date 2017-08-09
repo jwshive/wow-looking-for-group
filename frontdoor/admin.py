@@ -8,7 +8,6 @@ class RequestedParsesAdmin(admin.ModelAdmin):
 class ProcessedToonsAdmin(admin.ModelAdmin):
     list_display = ('character_name', 'character_race', 'character_faction', 'character_server', 'character_class', 'character_spec', 'character_level', 'character_equipped_ilevel')
 
-
 class BanHammerAdmin(admin.ModelAdmin):
     list_display = ('character_name',)
 
