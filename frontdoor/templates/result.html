@@ -13,6 +13,9 @@
 		<p> {{ character.toon_ilevel }}</p>
 		<p> {{ character.toon_legendaries }}</p>
 		<p> {{ character.toon_progression }}</p>
+		{% for raid in character.toon_progression %}
+			<p> {{ raid.raid_name }} - {{ raid.Normal }} - {{ raid.Heroic }} - {{ raid.Mythic }} </p>
+		{% endfor %}
 	{% endfor %}
 
 	
