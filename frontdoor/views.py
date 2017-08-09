@@ -19,6 +19,7 @@ def parse_group(request):
 
     # Check if user is banned
     user_id = RequestedParses.objects.filter(requesting_member=json_data['request']['requesting-member-name'], requesting_member_realm=json_data['request']['requesting-member-realm']).first()
+    print(user_id)
     # Make unique the BanHammer table so I don't need .first on that
     if user_id:
         try:
