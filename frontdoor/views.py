@@ -33,7 +33,7 @@ def parse_group(request):
     toon_info = []
     
     for item in json_data['request']['group']['members']:
-        results = api_call.get_character_stats(item['name'], item['realm'].replace(' ','-'), site_settings.blizzard_api_url_base, site_settings.client_id)
+        results = api_call.get_character_stats(item['name'].encode(ENCODING), item['realm'].replace(' ','-'), site_settings.blizzard_api_url_base, site_settings.client_id)
         toon_class = results['class']
         toon_faction = results['faction']
         toon_ilevel = results['equipped_ilevel']
