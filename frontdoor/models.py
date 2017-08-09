@@ -27,7 +27,7 @@ class RequestedParses(models.Model):
     
 
     def __str__(self):
-        return ("%s - %s" % (self.requesting_member, self.requesting_member_realm))
+        return ("[%s] %s - %s" % (self.pk, self.requesting_member, self.requesting_member_realm))
 
 
     class Meta:
