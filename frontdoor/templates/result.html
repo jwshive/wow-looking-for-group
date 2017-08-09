@@ -11,13 +11,22 @@
 		<legend><img src="{{character.api_image_url_base}}{{ character.toon_thumbnail }}"></img>{{ character.toon_name }}</legend>
 		<table class="table-style-one" style="display:inline-block">
 			<tr>
-				<th align="right">Class</th><td align="left">{{ character.toon_class }}</td> <th align="right">Race</th><td align="left">{{ character.toon_race }}</td>
+				<th align="right">Class</th><td align="left">{{ character.toon_class }}</td>
 			</tr>
 			<tr>
-				<th align="right">Realm</th> <td align="left">{{ character.toon_realm }}</td> <th align="right">Spec</th> <td align="left">{{ character.toon_spec }}</td>
+				 <th align="right">Race</th><td align="left">{{ character.toon_race }}</td>
 			</tr>
 			<tr>
-				<th align="right">Item Level</th> <td align="left">{{ character.toon_ilevel }}</td> <th align="right">Legendaries</th><td align="left">{{ character.toon_legendaries|safe }}</td>
+				<th align="right">Realm</th> <td align="left">{{ character.toon_realm }}</td>
+			</tr>
+			<tr>
+				<th align="right">Spec</th> <td align="left">{{ character.toon_spec }}</td>
+			</tr>
+			<tr>
+				<th align="right">Item Level</th> <td align="left">{{ character.toon_ilevel }}</td>
+			</tr>
+			<tr>
+				<th align="right">Legendaries</th><td align="left">{{ character.toon_legendaries|safe }}</td>
 			</tr>
 			{% for raid in character.toon_progression %}
 			<tr>
