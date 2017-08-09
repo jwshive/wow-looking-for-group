@@ -22,7 +22,7 @@ def parse_group(request):
     # Make unique the BanHammer table so I don't need .first on that
     if user_id:
         try:
-            banned = BanHammer.objects.get(character_name=user_id.id).first()
+            banned = BanHammer.objects.filter(character_name=user_id.id).first()
             return render(request, 'sorry.html', {'banned': banned, 'user_id': user_id})
         except ObjectDoesNotExist:
             pass
