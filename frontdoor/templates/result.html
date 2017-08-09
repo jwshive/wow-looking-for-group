@@ -11,7 +11,7 @@
 	{% endfor %}
 	
 	{% for character in toon_info_list %}
-		<p>{{ character }}</p>
+		<p>{{ character.split(',')[0] }}</p>
 	{% endfor %}
 
 {% endblock %}
