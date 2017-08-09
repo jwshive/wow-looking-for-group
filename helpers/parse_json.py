@@ -11,7 +11,7 @@ with open('group.json', 'r') as json_stuff:
 
 
 base64_bytes = b64encode(test_data)
-print(base64_bytes)
+#print(base64_bytes)
 
 base64_string = base64_bytes.decode(ENCODING)
 print(base64_string)

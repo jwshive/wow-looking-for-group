@@ -48,6 +48,7 @@ class ProcessedToons(models.Model):
     character_equipped_ilevel = models.IntegerField()
     character_legendaries = models.CharField(max_length=100)
     character_progression = models.TextField()
+    group_lookup_trackback = models.ForeignKey(RequestedParses)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
