@@ -58,7 +58,7 @@ def parse_group(request):
                 group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
                 )
         
-        toon_stash = "(%s,%s,%s,%s,%s,%s,%s,%s)" % (toon_class, toon_faction, toon_ilevel, toon_name, toon_race, toon_spec, toon_legendaries, toon_realm)
+        toon_stash = ("%s,%s,%s,%s,%s,%s,%s,%s" % (toon_class, toon_faction, toon_ilevel, toon_name, toon_race, toon_spec, toon_legendaries, toon_realm))
         tuple_stash = eval(toon_stash)
         print(type(tuple_stash))
         toon_info.append(tuple_stash)
