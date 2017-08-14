@@ -60,9 +60,9 @@ def parse_group(request):
                 character_thumbnail=toon_thumbnail,
                 character_equipped_ilevel=toon_ilevel,
                 character_weapon_ilevel=toon_weapon_ilevel,
+                character_points_spent=toon_points_spent,
                 character_legendaries=toon_legendaries,
                 character_progression=toon_progression,
-                character_points_spent=toon_points_spent,
                 group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
                 )
         toon_stash = {}
