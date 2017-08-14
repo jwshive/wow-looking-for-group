@@ -46,6 +46,7 @@ def parse_group(request):
         toon_level = results['level']
         toon_progression = results['all_progression']
         toon_thumbnail = results['thumbnail']
+        toon_points_spent = results['points_spent']
 
         # ADD Toon To DB
         ProcessedToons.objects.create(
@@ -61,10 +62,11 @@ def parse_group(request):
                 character_weapon_ilevel=toon_weapon_ilevel,
                 character_legendaries=toon_legendaries,
                 character_progression=toon_progression,
+                character_points_spent=toon_points_spent,
                 group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
                 )
         toon_stash = {}
-        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_weapon_ilevel': toon_weapon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression, 'toon_thumbnail': toon_thumbnail, 'api_image_url_base': site_settings.blizzard_api_image_url_base, 'api_armory_base_link': site_settings.blizzard_armory_base_link}
+        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_weapon_ilevel': toon_weapon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression, 'toon_thumbnail': toon_thumbnail, 'api_image_url_base': site_settings.blizzard_api_image_url_base, 'api_armory_base_link': site_settings.blizzard_armory_base_link, 'toon_points_spent': toon_points_spent}
         toon_info.append(toon_stash)
 
 

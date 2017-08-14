@@ -166,6 +166,11 @@ class BlizzardAPI:
         equipped_ilevel = legendary_data['items']['averageItemLevelEquipped']
         weapon_ilevel = legendary_data['items']['mainHand']['itemLevel']
 
+        points_spent = 0
+
+        for item in stat_data['items']['mainHand']['artifactTraits']:
+                points_spent += item['rank']
+
         legendary_items = []
 
         for item in legendary_data['items']:
@@ -189,6 +194,7 @@ class BlizzardAPI:
                 'thumbnail': thumbnail,
                 'spec': spec,
                 'all_progression': all_progression,
+                'points_spent': points_spent,
                 }
         return toon_dict
 

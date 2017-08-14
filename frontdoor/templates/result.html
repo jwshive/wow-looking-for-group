@@ -31,6 +31,9 @@
 			<tr>
 				<th align="right">Weapon Item Level</th><td align="left">{{ character.toon_weapon_ilevel }}</td>
 			</tr>
+			<tr>
+				<th align="right">Artifact Points Spent</th><td align="left">{{ character.toon_points_spent }}</td>
+			</tr>
 			{% for raid in character.toon_progression %}
 			<tr>
 				<th>{{ raid.raid_name }}</th>
