@@ -46,6 +46,7 @@ class ProcessedToons(models.Model):
     character_level = models.IntegerField()
     character_thumbnail = models.CharField(max_length=100)
     character_equipped_ilevel = models.IntegerField()
+    character_weapon_ilevel = models.IntegerField()
     character_legendaries = models.CharField(max_length=100)
     character_progression = models.TextField()
     group_lookup_trackback = models.ForeignKey(RequestedParses)

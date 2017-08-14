@@ -28,6 +28,9 @@
 			<tr>
 				<th align="right">Legendaries</th><td align="left">{{ character.toon_legendaries|safe }}</td>
 			</tr>
+			<tr>
+				<th align="right">Weapon Item Level</th><td align="left">{{ character.toon_weapon_ilevel }}</td>
+			</tr>
 			{% for raid in character.toon_progression %}
 			<tr>
 				<th>{{ raid.raid_name }}</th>

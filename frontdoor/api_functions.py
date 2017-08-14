@@ -164,6 +164,7 @@ class BlizzardAPI:
         legendary_data = json.loads(response.read().decode('UTF-8'))
 
         equipped_ilevel = legendary_data['items']['averageItemLevelEquipped']
+        weapon_ilevel = legendary_data['items']['mainHand']['itemLevel']
 
         legendary_items = []
 
@@ -183,6 +184,7 @@ class BlizzardAPI:
                 'class': CLASSES[character_class],
                 'level': character_level,
                 'equipped_ilevel': equipped_ilevel,
+                'weapon_ilevel': weapon_ilevel,
                 'legendaries': '<br>'.join(legendary_items) if legendary_items else "No Legendary Items.",
                 'thumbnail': thumbnail,
                 'spec': spec,

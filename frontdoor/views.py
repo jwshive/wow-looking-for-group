@@ -37,6 +37,7 @@ def parse_group(request):
         toon_class = results['class']
         toon_faction = results['faction']
         toon_ilevel = results['equipped_ilevel']
+        toon_weapon_ilevel = results['weapon_ilevel']
         toon_name = results['name']
         toon_race = results['race']
         toon_spec = results['spec']
@@ -57,12 +58,13 @@ def parse_group(request):
                 character_level=toon_level,
                 character_thumbnail=toon_thumbnail,
                 character_equipped_ilevel=toon_ilevel,
+                character_weapon_ilevel=toon_weapon_ilevel,
                 character_legendaries=toon_legendaries,
                 character_progression=toon_progression,
                 group_lookup_trackback=RequestedParses.objects.get(pk=new_data.id)
                 )
         toon_stash = {}
-        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression, 'toon_thumbnail': toon_thumbnail, 'api_image_url_base': site_settings.blizzard_api_image_url_base, 'api_armory_base_link': site_settings.blizzard_armory_base_link}
+        toon_stash = {'toon_class': toon_class, 'toon_faction': toon_faction, 'toon_ilevel': toon_ilevel, 'toon_weapon_ilevel': toon_weapon_ilevel, 'toon_name': toon_name, 'toon_race': toon_race, 'toon_spec': toon_spec, 'toon_legendaries': toon_legendaries, 'toon_realm': toon_realm, 'toon_progression': toon_progression, 'toon_thumbnail': toon_thumbnail, 'api_image_url_base': site_settings.blizzard_api_image_url_base, 'api_armory_base_link': site_settings.blizzard_armory_base_link}
         toon_info.append(toon_stash)
 
 
